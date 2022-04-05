@@ -1,34 +1,47 @@
 % \documentclass[10/11/12pt]{ltjarticle}
-\documentclass{ltjarticle}
+\documentclass[tate]{ltjarticle}
 
 \usepackage{ankipackage}
 
-\usepackage[a4paper, portrait, margin=3mm]{geometry}
+\usepackage{luatexja}
+
+\usepackage[a4paper, landscape, margin=3mm, showframe]{geometry}
 
 \usepackage[match]{luatexja-fontspec}
 \setmainjfont{UD Digi Kyokasho N-R}
 \setsansjfont{UD Digi Kyokasho N-R}
 \setmonojfont{UD Digi Kyokasho N-R}
 
-% [L/LP] https://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
-\linespread{1.0}
+% https://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
+% \linespread{0.7}
 
-\usepackage{ruby}
+% \usepackage{ruby}
+\usepackage{luatexja-ruby}
 
 \begin{document}
 
 	\setlength{\parindent}{0em}
 
-	% [P/LP] between items
-	% \setlength{\parskip}{-3.0em}
+	% https://www.overleaf.com/learn/latex/Articles/How_to_change_paragraph_spacing_in_LaTeX
+	\setlength{\parskip}{-0.7em}
 
 	% https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Reference_guide
 	% https://en.wikibooks.org/wiki/LaTeX/Fonts#Built-in_sizes
+	% \tiny
+	% \scriptsize
+	% \footnotesize
+	% \small
+	% \normalsize
+	% \large
 	\Large
+	% \LARGE
+	% \huge
+	% \Huge
 
 	% \include{anki.tex}
 	\input{anki.tex}
 
+	% https://www.overleaf.com/learn/latex/Line_breaks_and_blank_spaces
 	\clearpage
 
 	\input{dummy.tex}
