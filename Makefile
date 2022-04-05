@@ -7,10 +7,10 @@ I=index.tex
 default: clean entr
 
 clean:
-	rm $(O)/*.{aux,log,pdf}
+	rm -f $(O)/*.{aux,log,pdf}
 
 entr:
-	entr <<<$(I) $(MAKE) pdf
+	ls -1 *.tex *.sty | entr $(MAKE) pdf
 
 pdf: $(I)
-	xelatex --output-directory=$(O) $<
+	xelatex -halt-on-error -interaction=nonstopmode -output-directory=$(O) $<
