@@ -3,10 +3,7 @@
 
 O:=builddir
 I=index.tex
-
-# TEX:=xelatex
-# TEX:=platex
-TEX:=uplatex
+TEX:=lualatex
 
 default: clean entr
 
@@ -18,4 +15,3 @@ entr:
 
 pdf: $(I)
 	$(TEX) -halt-on-error -interaction=nonstopmode -output-directory=$(O) $<
-# 	ptex2pdf -u -l -ot '-synctex=1' -od '-f uptex-ipaex.map' $(I)

@@ -1,17 +1,30 @@
-% \documentclass{minimal}
-% \documentclass{report}
-% \documentclass{article}
-% \documentclass{jsarticle}
-\documentclass[uplatex,dvipdfmx]{jsarticle}
+% \documentclass[10/11/12pt]{ltjarticle}
+\documentclass{ltjarticle}
 
 \usepackage{ankipackage}
 
+\usepackage[a4paper, portrait, margin=3mm]{geometry}
+
+\usepackage[match]{luatexja-fontspec}
+\setmainjfont{UD Digi Kyokasho N-R}
+\setsansjfont{UD Digi Kyokasho N-R}
+\setmonojfont{UD Digi Kyokasho N-R}
+
+% [L/LP] https://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
+\linespread{1.0}
+
+\usepackage{ruby}
+
 \begin{document}
 
-	% \setlength{\parindent}{0em}
+	\setlength{\parindent}{0em}
 
-	% \setlength{\baselinestretch}{?}
-	% \setlength{\baselineskip}{1.5em}
+	% [P/LP] between items
+	% \setlength{\parskip}{-3.0em}
+
+	% https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Reference_guide
+	% https://en.wikibooks.org/wiki/LaTeX/Fonts#Built-in_sizes
+	\Large
 
 	% \include{anki.tex}
 	\input{anki.tex}
