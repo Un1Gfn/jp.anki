@@ -1,16 +1,23 @@
-% \documentclass[10/11/12pt]{ltjarticle}
-\documentclass[tate]{ltjarticle}
+% 10pt 11pt 12pt
+% 10pt is default
+\documentclass[10pt,tate]{ltjarticle}
 
 \usepackage{ankipackage}
 
 \usepackage{luatexja}
 
-\usepackage[a4paper, landscape, margin=3mm, showframe]{geometry}
+\usepackage[
+	a4paper,
+	,landscape
+	% ,margin=3mm
+	,margin=3mm
+	% ,showframe
+]{geometry}
 
 \usepackage[match]{luatexja-fontspec}
-\setmainjfont{UD Digi Kyokasho N-R}
-\setsansjfont{UD Digi Kyokasho N-R}
-\setmonojfont{UD Digi Kyokasho N-R}
+\setmainjfont[BoldFont={UD Digi Kyokasho N-B}]{UD Digi Kyokasho N-R}
+\setsansjfont[BoldFont={UD Digi Kyokasho N-B}]{UD Digi Kyokasho N-R}
+\setmonojfont[BoldFont={UD Digi Kyokasho N-B}]{UD Digi Kyokasho N-R}
 
 % https://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Line_Spacing
 % \linespread{0.7}
@@ -18,12 +25,23 @@
 % \usepackage{ruby}
 \usepackage{luatexja-ruby}
 
+% https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC_(%E8%A8%98%E5%8F%B7)
+% ^^^^22ef
+\newcommand\santen{^^^^2026}
+
+% https://tex.stackexchange.com/questions/41681/correct-way-to-bold-italicize-text
+% https://en.wikibooks.org/wiki/LaTeX/Colors
+% \bf \textbf \framebox
+\usepackage{xcolor}
+\newcommand{\bc}[1]{\textbf{\color{brown}#1}}
+\newcommand{\bcc}[1]{\textbf{\color{teal}#1}}
+
 \begin{document}
 
 	\setlength{\parindent}{0em}
 
 	% https://www.overleaf.com/learn/latex/Articles/How_to_change_paragraph_spacing_in_LaTeX
-	\setlength{\parskip}{-0.7em}
+	% \setlength{\parskip}{-0.7em}
 
 	% https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Reference_guide
 	% https://en.wikibooks.org/wiki/LaTeX/Fonts#Built-in_sizes
@@ -33,8 +51,8 @@
 	% \small
 	% \normalsize
 	% \large
-	\Large
-	% \LARGE
+	% \Large
+	\LARGE
 	% \huge
 	% \Huge
 

@@ -4,3 +4,6 @@
 # /builddir/.*
 /builddir/*
 !/builddir/.gitkeep
+
+# https://ftp.ntou.edu.tw/ctan/macros/luatex/generic/luatexja/doc/luatexja-ruby.pdf#page=6
+/*.ltjruby
