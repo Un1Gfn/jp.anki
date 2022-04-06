@@ -9,8 +9,8 @@
 \usepackage[
 	a4paper,
 	,landscape
+	,margin=0mm
 	% ,margin=3mm
-	,margin=3mm
 	% ,showframe
 ]{geometry}
 
@@ -41,7 +41,7 @@
 	\setlength{\parindent}{0em}
 
 	% https://www.overleaf.com/learn/latex/Articles/How_to_change_paragraph_spacing_in_LaTeX
-	% \setlength{\parskip}{-0.7em}
+	\setlength{\parskip}{-0.0pt}
 
 	% https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Reference_guide
 	% https://en.wikibooks.org/wiki/LaTeX/Fonts#Built-in_sizes
@@ -57,11 +57,13 @@
 	% \Huge
 
 	% \include{anki.tex}
-	\input{anki.tex}
-
+	% https://tex.stackexchange.com/questions/21983/how-to-avoid-page-breaks-inside-paragraphs
 	% https://www.overleaf.com/learn/latex/Line_breaks_and_blank_spaces
-	\clearpage
-
-	\input{dummy.tex}
+	% https://stackoverflow.com/a/4008368/
+	% https://texfaq.org/FAQ-nopagebrk
+	% page break between paragraphs
+	\clearpage\begin{samepage}\input{anki20220405.tex}\end{samepage}
+	% \clearpage\begin{samepage}\input{anki20220407.tex}\end{samepage}
+	% \clearpage\input{dummy.tex}
 
 \end{document}
