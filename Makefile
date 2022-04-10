@@ -19,7 +19,9 @@ pdf:
 	for i in anki????????.tex; do \
 		env LANG=en_US.UTF-8 sed -i -E \
 			-e 's,'``'(^|[[:space:]])'``'([^[:space:]]+)\.([あ-ゞ・]*)\[([あ-ゞ・]+)\]([あ-ゞ・]*)'``'([[:space:]]|$$)'``',\\ltjruby{\2}{\3\\bc{\4}\5},g' \
+			-e 's,'``'(^|[[:space:]])'``'([あ-ゞ・]*)\[([あ-ゞ・]+)\]([あ-ゞ・]*)\.([^[:space:]]+)'``'([[:space:]]|$$)'``',\\ltjruby{\2\\bc{\3}\4}{\5},g' \
 			-e 's,'``'(^|[[:space:]])'``'([^[:space:]]+)\.([あ-ゞ・]+)'``'([[:space:]]|$$)'``',\\ltjruby{\2}{\3},g' \
+			-e 's,'``'(^|[[:space:]])'``'([あ-ゞ・]+)\.([^[:space:]]+)'``'([[:space:]]|$$)'``',\\ltjruby{\2}{\3},g' \
 			$$i; \
 	done
 # 	lualatex -halt-on-error -interaction=nonstopmode -output-directory=$(O) $<

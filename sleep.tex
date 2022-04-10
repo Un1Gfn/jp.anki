@@ -1,0 +1,32 @@
+% entr <<<sleep.tex lualatex -halt-on-error -interaction=nonstopmode -output-directory=/tmp/sleep.tex.d sleep.tex
+\PassOptionsToPackage{force}{lltjp-geometry} 
+\documentclass[tate]{ltjarticle}
+\usepackage[a4paper,portrait,right=200pt,top=0pt,bottom=0pt,left=0pt]{geometry}
+\usepackage{luatexja}
+
+\usepackage[match]{luatexja-fontspec}
+\setmainjfont{UD Digi Kyokasho N-R}[SizeFeatures={Size=80}]
+
+\usepackage{xcolor}
+
+\begin{document}
+
+\setlength{\baselineskip}{100pt}
+\setlength{\parindent}{0em}
+
+\centering
+
+% \Huge
+% \fontsize{120pt}{190pt}\selectfont
+
+% \vfill\\
+
+% 十時半までに寝ないと\\
+% ぶ・ち・こ・ろ・す\\
+
+夜⑽時半にたったら\\
+さっさと\textcolor{pink}{シコって}寝ろ\\
+
+% \vfill\\
+
+\end{document}
