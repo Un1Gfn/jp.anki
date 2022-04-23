@@ -2,8 +2,9 @@
 # /home/darren/sphinx.public/Makefile
 
 O:=builddir
+I=index
 
-default: clean entr
+default: clean pdf okular entr
 
 clean:
 	rm -f $(O)/*.{aux,dvi,eps,log,pdf}
@@ -11,6 +12,9 @@ clean:
 
 entr:
 	ls -1 *.tex *.sty | entr $(MAKE) pdf
+
+okular:
+	(okular $(O)/$(I).pdf &>/dev/null &)
 
 pdf:
 # 	これは 振り仮名.ふりがな である	 これは\ltjruby{振り仮名}{ふりがな}である
@@ -26,4 +30,4 @@ pdf:
 	done
 # 	lualatex -halt-on-error -interaction=nonstopmode -output-directory=$(O) $<
 # 	ln -sfv /usr/bin/luajittex /tmp/luajitlatex
-	lualatex -halt-on-error -interaction=nonstopmode -output-directory=$(O) index.tex
+	lualatex -halt-on-error -interaction=nonstopmode -output-directory=$(O) $(I).tex

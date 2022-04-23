@@ -36,12 +36,34 @@
 \newcommand{\bc}[1]{\textbf{\color{brown}#1}}
 \newcommand{\bcc}[1]{\textbf{\color{teal}#1}}
 
+% https://qiita.com/ultimatile/items/3982b1f69bc277ddb9ba
+% https://tex.stackexchange.com/questions/3700/double-strikeout
+\usepackage{ulem}
+% \DeclareRobustCommand{\erase}{\bgroup\markoverwith{\rule[.5ex]{2pt}{0.4pt}}\ULon}
+% \DeclareRobustCommand{\erase}{\bgroup\markoverwith{\rule[.0ex]{2pt}{0.4pt}}\ULon}
+\newlength{\ruleM}
+\newlength{\ruleL}
+\newlength{\ruleR}
+\newlength{\ruleW}
+\setlength{\ruleW}{0.1ex}
+\setlength{\ruleM}{\dimexpr(0.0ex)\relax}
+\setlength{\ruleL}{\dimexpr(0.0ex-0.35ex-\ruleW)\relax}
+\setlength{\ruleR}{\dimexpr(0.0ex+0.35ex)\relax}
+\DeclareRobustCommand{\erase}{\bgroup\markoverwith{\textcolor{black}{%
+	\rule[\ruleL]{0.1pt}{\ruleW}%
+	\hskip-0.1pt%
+	\rule[\ruleR]{0.1pt}{\ruleW}%
+}}\ULon}
+
 \begin{document}
 
-	\setlength{\parindent}{0em}
+	% \the\parindent
+	\setlength{\parindent}{0.0pt}
+	% \the\parindent
 
 	% https://www.overleaf.com/learn/latex/Articles/How_to_change_paragraph_spacing_in_LaTeX
-	\setlength{\parskip}{-0.0pt}
+	% \setlength{\parskip}{0.0pt}
+	% \the\parskip
 
 	% https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Reference_guide
 	% https://en.wikibooks.org/wiki/LaTeX/Fonts#Built-in_sizes
@@ -65,8 +87,9 @@
 
 	% \clearpage\begin{samepage}\input{anki20220405.tex}\end{samepage}
 
-	% \clearpage\begin{samepage}\input{anki20220407.tex}\end{samepage}
+	\clearpage\begin{samepage}\input{anki20220407_a.tex}\end{samepage}
+	\clearpage\begin{samepage}\input{anki20220407_b.tex}\end{samepage}
 
-	\clearpage\input{dummy.tex}
+	% \clearpage\input{dummy.tex}
 
 \end{document}
