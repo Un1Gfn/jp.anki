@@ -29,7 +29,11 @@ This is a verbatim environment with mono-space font
 
 \clearpage
 
-\newcommand{\testcolor}[1]{すべての\ltjruby{人間}{にんげ\textbf{\color{#1}ん}}は、生れながらにして自由であり#1}
+\newcommand{\testcolor}[1]{すべての%
+  \ltjruby{人間}{にん\textbf{\color{#1}げん}}%
+  は、生れながらにして%
+  \textbf{\color{#1}自由であり}%
+  #1}
 \testcolor{black}\\
 \testcolor{blue}\\
 \testcolor{brown}\\

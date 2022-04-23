@@ -33,8 +33,9 @@
 % https://en.wikibooks.org/wiki/LaTeX/Colors
 % \bf \textbf \framebox
 \usepackage{xcolor}
-\newcommand{\bc}[1]{\textbf{\color{brown}#1}}
-\newcommand{\bcc}[1]{\textbf{\color{teal}#1}}
+\newcommand{\bx}[1]{\textbf{\color{brown}#1}}
+\newcommand{\by}[1]{\textbf{\color{teal}#1}}
+\newcommand{\bl}[1]{\textbf{\color{gray}#1}}
 
 % https://qiita.com/ultimatile/items/3982b1f69bc277ddb9ba
 % https://tex.stackexchange.com/questions/3700/double-strikeout
@@ -54,6 +55,12 @@
 	\hskip-0.1pt%
 	\rule[\ruleR]{0.1pt}{\ruleW}%
 }}\ULon}
+
+% https://mathlandscape.com/latex-column/
+% https://www.overleaf.com/learn/latex/Multiple_columns
+\usepackage{multicol}
+\setlength{\columnseprule}{1pt}
+% \def\columnseprulecolor{\color{blue}}
 
 \begin{document}
 
@@ -85,11 +92,14 @@
 	% https://texfaq.org/FAQ-nopagebrk
 	% page break between paragraphs
 
-	% \clearpage\begin{samepage}\input{anki20220405.tex}\end{samepage}
+	% 0_past
+		% \clearpage\begin{samepage}\input{anki20220405.tex}\end{samepage}
 
-	\clearpage\begin{samepage}\input{anki20220407_a.tex}\end{samepage}
-	\clearpage\begin{samepage}\input{anki20220407_b.tex}\end{samepage}
+	% 1_present
+		\clearpage\begin{samepage}\input{anki20220407_a.tex}\end{samepage}
+		\clearpage\begin{samepage}\input{anki20220407_b.tex}\end{samepage}
 
-	% \clearpage\input{dummy.tex}
+	% 2_future
+		% \clearpage\input{dummy.tex}
 
 \end{document}
