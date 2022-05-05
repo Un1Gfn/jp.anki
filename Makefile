@@ -3,8 +3,9 @@
 
 O:=builddir
 I:=index
-K:=[あ-ゞー・]
-B:=bc
+# K:=[あ-ゞー・]
+K:=$(shell echo -e "[\u3040-\u30FF]")
+B:=bx
 
 default: clean pdf okular entr
 
